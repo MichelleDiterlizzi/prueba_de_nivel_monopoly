@@ -4,13 +4,13 @@ declare(strict_types = 1);
 
 class Tarjeta{
 
-    private $nombre;
-    private $color;
-    private $precioBaseAlquiler;
-    private $precioAlquilerCasas = [];
+    private string $nombre;
+    private string $color;
+    private int $precioBaseAlquiler;
+    private array $precioAlquilerCasas = [];
     
 
-    public function __construct($nombre, $color, $precioBaseAlquiler, $precioAlquilerCasas){
+    public function __construct(string $nombre, string $color, int $precioBaseAlquiler, array $precioAlquilerCasas){
 
         $this->nombre = $nombre;
         $this->color = $color;
@@ -25,6 +25,10 @@ class Tarjeta{
 
     public function getPrecioBaseAlquiler(): int {
         return $this->precioBaseAlquiler;
+    }
+
+    public function __toString() : string {
+        return "NOMBRE: ".$this->nombre. " COLOR: ".$this->color. " PRECIO BASE ALQUILER: ". $this->precioBaseAlquiler ."€ ". "PRECIO ALQUILER POR COSA O HOTEL: ". implode("€, ",$this->precioAlquilerCasas). "€.";
     }
 }
 

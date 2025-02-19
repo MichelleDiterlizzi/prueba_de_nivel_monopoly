@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types = 1);
+
 require_once("tarjeta.php");
 
 class GestionTarjetas{
 
-    private $tarjetas = [];
+    private array $tarjetas = [];
 
 
-    public function __construct($tarjetas) {
+    public function __construct(array $tarjetas) {
         $this->tarjetas = $tarjetas;
     }
 
@@ -18,7 +20,7 @@ class GestionTarjetas{
         foreach($this->tarjetas as $tarjeta){
 
             if($tarjeta->getColor() == $color){
-                print_r($tarjeta);
+                echo $tarjeta.PHP_EOL;
             }
         }
     }
@@ -35,7 +37,7 @@ class GestionTarjetas{
                 $tarjetaAlquilerMasAlto = $tarjeta;
             }
         }
-        print_r($tarjetaAlquilerMasAlto).PHP_EOL;
+        echo $tarjeta.PHP_EOL;
     } 
 }
 
